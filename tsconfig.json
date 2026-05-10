@@ -1,0 +1,3 @@
+{
+  "extends": "@darasa-lako/config/tsconfig.base.json"
+}

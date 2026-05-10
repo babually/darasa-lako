@@ -1,0 +1,25 @@
+{
+  "name": "@darasa-lako/auth",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "default": "./src/*.ts"
+    }
+  },
+  "scripts": {},
+  "dependencies": {
+    "@better-auth/expo": "catalog:",
+    "@darasa-lako/db": "workspace:*",
+    "@darasa-lako/env": "workspace:*",
+    "better-auth": "catalog:",
+    "dotenv": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@darasa-lako/config": "workspace:*",
+    "typescript": "^6"
+  }
+}
