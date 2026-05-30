@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --port 3001",
+    "dev": "next dev --port 3050",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
+    "@byteship/js": "^0.1.5",
     "@darasa-lako/auth": "workspace:*",
+    "@darasa-lako/db": "workspace:*",
     "@darasa-lako/env": "workspace:*",
     "@darasa-lako/ui": "workspace:*",
     "@prisma/client": "catalog:",

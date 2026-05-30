@@ -1,9 +1,37 @@
 generator client {
-  provider = "prisma-client"
-  output   = "../generated"
+  provider     = "prisma-client"
+  output       = "../generated"
   moduleFormat = "esm"
+}
+
+generator prismaIDB {
+  provider     = "idb-client-generator"
+  output       = "../generated/idb"
+  moduleFormat = "esm"
+
+  // Optional: Enable sync engine
+  outboxSync = true
+  rootModel  = "User" // Anchor for ownership DAG
+  exclude    = ["Changelog", "Session", "Verification"] // Skip Changelog and server-only models
 }
 
 datasource db {
   provider = "postgresql"
+}
+
+model Changelog {
+  id            String          @id @default(uuid(7))
+  model         String
+  keyPath       Json
+  operation     ChangeOperation
+  scopeKey      String
+  outboxEventId String          @unique
+
+  @@index([model, id])
+}
+
+enum ChangeOperation {
+  create
+  update
+  delete
 }

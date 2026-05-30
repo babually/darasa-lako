@@ -30,6 +30,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
-  ],
+, "../../packages/auth/src/permissions.ts"  ],
   "exclude": ["./node_modules"]
 }

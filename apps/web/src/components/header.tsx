@@ -2,30 +2,47 @@
 import Link from "next/link";
 
 import { ModeToggle } from "./mode-toggle";
-import UserMenu from "./user-menu";
+import { Button } from "@darasa-lako/ui/components/button";
 
 export default function Header() {
-  const links = [
-    { to: "/", label: "Home" },
-    { to: "/dashboard", label: "Dashboard" },
-  ] as const;
+  // const links = [
+  //   { to: "/", label: "Home" },
+  //   { to: "/dashboard", label: "Dashboard" },
+  // ] as const;
 
   return (
-    <div>
-      <div className="flex flex-row items-center justify-between px-2 py-1">
+    <div className="fixed inset-x-4 top-6 z-50 mx-auto h-16 max-w-(--breakpoint-xl) rounded-full border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="mx-auto flex h-full items-center justify-between px-4 py-1">
         <nav className="flex gap-4 text-lg">
-          {links.map(({ to, label }) => {
+          <div>
+            <Link href="/" className="text-primary text-bold">Darasa Lako</Link>
+          </div>
+          {/* {links.map(({ to, label }) => {
             return (
               <Link key={to} href={to}>
                 {label}
               </Link>
             );
-          })}
+          })} */}
         </nav>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
+          <ModeToggle />
+          <Button
+            className="rounded-full"
+            nativeButton={false}
+            render={<Link href="/dashboard" />}>
+            Dashboard
+          </Button>
+
+          {/* Mobile Menu */}
+          {/* <div className="md:hidden">
+            <NavigationSheet />
+          </div> */}
+        </div>
+        {/* <div className="flex items-center gap-2">
           <ModeToggle />
           <UserMenu />
-        </div>
+        </div> */}
       </div>
       <hr />
     </div>

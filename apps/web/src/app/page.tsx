@@ -1,30 +1,32 @@
 "use client";
 
-const TITLE_TEXT = `
- ██████╗ ███████╗████████╗████████╗███████╗██████╗
- ██╔══██╗██╔════╝╚══██╔══╝╚══██╔══╝██╔════╝██╔══██╗
- ██████╔╝█████╗     ██║      ██║   █████╗  ██████╔╝
- ██╔══██╗██╔══╝     ██║      ██║   ██╔══╝  ██╔══██╗
- ██████╔╝███████╗   ██║      ██║   ███████╗██║  ██║
- ╚═════╝ ╚══════╝   ╚═╝      ╚═╝   ╚══════╝╚═╝  ╚═╝
-
- ████████╗    ███████╗████████╗ █████╗  ██████╗██╗  ██╗
- ╚══██╔══╝    ██╔════╝╚══██╔══╝██╔══██╗██╔════╝██║ ██╔╝
-    ██║       ███████╗   ██║   ███████║██║     █████╔╝
-    ██║       ╚════██║   ██║   ██╔══██║██║     ██╔═██╗
-    ██║       ███████║   ██║   ██║  ██║╚██████╗██║  ██╗
-    ╚═╝       ╚══════╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝
- `;
+import Header from "@/components/header";
+import ResourceSection from "@/components/resources/resource-section";
+import { SubmitButton } from "@/components/resources/submit-button";
 
 export default function Home() {
   return (
-    <div className="container mx-auto max-w-3xl px-4 py-2">
-      <pre className="overflow-x-auto font-mono text-sm">{TITLE_TEXT}</pre>
-      <div className="grid gap-6">
-        <section className="rounded-lg border p-4">
-          <h2 className="mb-2 font-medium">API Status</h2>
-        </section>
-      </div>
+    <div>
+      <Header />
+      <main className="min-h-screen bg-background">
+        <div className="mx-auto max-w-5xl px-4 py-6">
+          <section className="pt-22 text-center">
+            <h1 className="font-serif text-5xl md:text-6xl font-medium text-foreground">
+              Darasa Lako Hub
+            </h1>
+            <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto text-balance">
+              Access notes, exam papers, and study materials to excel in your studies.
+            </p>
+          </section>
+          <div className="mt-16">
+            <ResourceSection />
+          </div>
+
+
+        </div>
+
+        <SubmitButton />
+      </main>
     </div>
   );
 }
