@@ -76,8 +76,8 @@ export default function NotesPage() {
               type="button"
               onClick={() => setSubjectFilter(s)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all border ${subjectFilter === s
-                  ? "bg-violet-600 text-white border-violet-600"
-                  : "bg-white text-slate-500 border-slate-200 hover:border-violet-300 hover:text-violet-600"
+                ? "bg-violet-600 text-white border-violet-600"
+                : "bg-white text-slate-500 border-slate-200 hover:border-violet-300 hover:text-violet-600"
                 }`}
             >
               {s === "all" ? "All Subjects" : s}
@@ -167,13 +167,6 @@ export default function NotesPage() {
             </Button>
           </EmptyContent>
         </Empty>
-        // <div className="flex flex-col items-center justify-center py-20 text-center">
-        //   <div className="w-16 h-16 bg-violet-50 rounded-full flex items-center justify-center mb-4">
-        //     <BookOpenIcon className="w-7 h-7 text-violet-300" />
-        //   </div>
-        //   <p className="text-slate-500 font-medium">No notes found</p>
-        //   <p className="text-slate-400 text-sm mt-1">Your teacher hasn't assigned any notes yet</p>
-        // </div>
       )}
     </div>
   );

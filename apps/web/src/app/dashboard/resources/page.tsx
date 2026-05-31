@@ -102,23 +102,6 @@ export default function ResourcesPage() {
               </button>
             ))}
           </div>
-
-          {/* <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
-            <span className="text-xs font-medium text-slate-500 uppercase tracking-wider shrink-0 mr-2">Subjects:</span>
-            {subjects.map((s) => (
-              <button
-                key={s}
-                onClick={() => setSubjectFilter(s)}
-                className={`px-3 py-1 rounded-full text-xs font-medium transition-all border whitespace-nowrap ${
-                  subjectFilter === s
-                    ? "bg-violet-600 text-white border-violet-600"
-                    : "bg-[#0f1623] text-slate-400 border-white/10 hover:border-white/20 hover:text-white"
-                }`}
-              >
-                {s === "all" ? "All Subjects" : s}
-              </button>
-            ))}
-          </div> */}
         </div>
       </div>
 
@@ -150,13 +133,6 @@ export default function ResourcesPage() {
             </Button>
           </EmptyContent>
         </Empty>
-        // <div className="flex flex-col items-center justify-center py-20 text-center">
-        //   <div className="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mb-4 border border-white/10">
-        //     <FolderIcon className="w-7 h-7 text-slate-600" />
-        //   </div>
-        //   <p className="text-slate-400 font-medium">No resources found</p>
-        //   <p className="text-slate-500 text-sm mt-1">Try a different search or filter</p>
-        // </div>
       )}
     </div>
   );

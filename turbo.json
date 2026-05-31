@@ -3,21 +3,51 @@
   "ui": "tui",
   "tasks": {
     "build": {
-      "dependsOn": ["^build"],
-      "env": [".env*"],
-      "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": ["dist/**", ".next/**"]
+      "dependsOn": [
+        "^build"
+      ],
+      "env": [
+        "DATABASE_URL",
+        "BETTER_AUTH_SECRET",
+        "BETTER_AUTH_URL",
+        "CORS_ORIGIN"
+      ],
+      "passThroughEnv": [
+        "BYTESHIP_API_KEY"
+      ],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        ".env",
+        ".env.production",
+        ".env.local"
+      ],
+      "outputs": [
+        "dist/**",
+        ".next/**"
+      ]
     },
     "web#build": {
-      "dependsOn": ["^build"],
-      "env": [".env.web"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "dependsOn": [
+        "^build"
+      ],
+      "env": [
+        ".env.local",
+        ".env.production"
+      ],
+      "outputs": [
+        ".next/**",
+        "!.next/cache/**"
+      ]
     },
     "lint": {
-      "dependsOn": ["^lint"]
+      "dependsOn": [
+        "^lint"
+      ]
     },
     "check-types": {
-      "dependsOn": ["^check-types"]
+      "dependsOn": [
+        "^check-types"
+      ]
     },
     "dev": {
       "cache": false,
