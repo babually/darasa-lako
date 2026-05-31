@@ -1,7 +1,8 @@
 // import { browser } from "$app/environment";
 // import { PrismaIDBClient } from "$lib/prisma-idb/client/prisma-idb-client";
 
-import { PrismaIDBClient } from "@darasa-lako/db/idb/client/prisma-idb-client";
+import { PrismaIDBClient } from "@darasa-lako/db/prisma/generated/idb/client/prisma-idb-client";
+
 
 const browser = typeof window !== "undefined";
 let client: PrismaIDBClient | undefined;
