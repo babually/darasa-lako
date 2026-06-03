@@ -8,8 +8,6 @@
       ],
       "env": [
         "DATABASE_URL",
-        "BETTER_AUTH_SECRET",
-        "CORS_ORIGIN"
       ],
       "passThroughEnv": [
         "BYTESHIP_API_KEY"
@@ -30,10 +28,7 @@
         "^build"
       ],
       "env": [
-        "DATABASE_URL",
-        "BETTER_AUTH_SECRET",
-        "BETTER_AUTH_URL",
-        "CORS_ORIGIN"
+        "DATABASE_URL"
       ],
       "outputs": [
         ".next/**",
