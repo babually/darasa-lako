@@ -4,6 +4,8 @@ import z from "zod";
 import { applyPush } from "@darasa-lako/db/idb/server/batch-processor";
 import { outboxEventSchema } from "@darasa-lako/db/idb/validators";
 
+export const dynamic = "force-dynamic";
+
 export async function POST(request: Request): Promise<Response> {
   // Parse and validate request body
   let pushRequestBody: unknown;

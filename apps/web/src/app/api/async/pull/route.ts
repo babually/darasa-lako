@@ -3,6 +3,8 @@ import prisma from "@darasa-lako/db";
 import z from "zod";
 import { pullAndMaterializeLogs } from "@darasa-lako/db/idb/server/batch-processor";
 
+export const dynamic = "force-dynamic";
+
 export async function POST(request: Request): Promise<Response> {
   // Parse and validate request body
   let pullRequestBody: unknown;
