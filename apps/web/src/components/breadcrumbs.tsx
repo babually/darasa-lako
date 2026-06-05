@@ -1,39 +1,41 @@
-'use client';
+"use client";
 import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator
-} from '@darasa-lako/ui/components/breadcrumb';
-import { Icons } from './icons';
-import { Fragment } from 'react';
-import { useBreadcrumbs } from '@/app/hooks/use-breadcrumbs';
+	Breadcrumb,
+	BreadcrumbItem,
+	BreadcrumbLink,
+	BreadcrumbList,
+	BreadcrumbPage,
+	BreadcrumbSeparator,
+} from "@darasa-lako/ui/components/breadcrumb";
+import { Fragment } from "react";
+import { useBreadcrumbs } from "@/app/hooks/use-breadcrumbs";
+import { Icons } from "./icons";
 
 export function Breadcrumbs() {
-  const items = useBreadcrumbs();
-  if (items.length === 0) return null;
+	const items = useBreadcrumbs();
+	if (items.length === 0) return null;
 
-  return (
-    <Breadcrumb>
-      <BreadcrumbList>
-        {items.map((item, index) => (
-          <Fragment key={item.title}>
-            {index !== items.length - 1 && (
-              <BreadcrumbItem className='hidden md:block'>
-                <BreadcrumbLink href={item.link}>{item.title}</BreadcrumbLink>
-              </BreadcrumbItem>
-            )}
-            {index < items.length - 1 && (
-              <BreadcrumbSeparator className='hidden md:block'>
-                <Icons.slash />
-              </BreadcrumbSeparator>
-            )}
-            {index === items.length - 1 && <BreadcrumbPage>{item.title}</BreadcrumbPage>}
-          </Fragment>
-        ))}
-      </BreadcrumbList>
-    </Breadcrumb>
-  );
+	return (
+		<Breadcrumb>
+			<BreadcrumbList>
+				{items.map((item, index) => (
+					<Fragment key={item.title}>
+						{index !== items.length - 1 && (
+							<BreadcrumbItem className="hidden md:block">
+								<BreadcrumbLink href={item.link}>{item.title}</BreadcrumbLink>
+							</BreadcrumbItem>
+						)}
+						{index < items.length - 1 && (
+							<BreadcrumbSeparator className="hidden md:block">
+								<Icons.slash />
+							</BreadcrumbSeparator>
+						)}
+						{index === items.length - 1 && (
+							<BreadcrumbPage>{item.title}</BreadcrumbPage>
+						)}
+					</Fragment>
+				))}
+			</BreadcrumbList>
+		</Breadcrumb>
+	);
 }

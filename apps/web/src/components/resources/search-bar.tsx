@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import { Search } from "lucide-react"
-import { Input } from "@darasa-lako/ui/components/input"
+import { Input } from "@darasa-lako/ui/components/input";
+import { Search } from "lucide-react";
 
 export function SearchBar() {
-  return (
-    <div className="relative mx-auto w-106">
-      <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-      <Input
-        type="text"
-        placeholder="Search all resources..."
-        className="w-full pl-12 pr-4 py-6 text-base bg-input border-border rounded-xl shadow-sm focus-visible:ring-primary"
-      />
-    </div>
-  )
+	return (
+		<div className="relative mx-auto w-106">
+			<Search className="absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
+			<Input
+				type="text"
+				placeholder="Search all resources..."
+				className="w-full rounded-xl border-border bg-input py-6 pr-4 pl-12 text-base shadow-sm focus-visible:ring-primary"
+			/>
+		</div>
+	);
 }

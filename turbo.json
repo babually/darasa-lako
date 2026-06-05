@@ -1,73 +1,44 @@
 {
-  "$schema": "https://turbo.build/schema.json",
-  "ui": "tui",
-  "tasks": {
-    "build": {
-      "dependsOn": [
-        "^build"
-      ],
-      "env": [
-        "DATABASE_URL",
-      ],
-      "passThroughEnv": [
-        "BYTESHIP_API_KEY"
-      ],
-      "inputs": [
-        "$TURBO_DEFAULT$",
-        ".env",
-        ".env.production",
-        ".env.local"
-      ],
-      "outputs": [
-        "dist/**",
-        ".next/**"
-      ]
-    },
-    "web#build": {
-      "dependsOn": [
-        "^build"
-      ],
-      "env": [
-        "DATABASE_URL"
-      ],
-      "outputs": [
-        ".next/**",
-        "!.next/cache/**"
-      ]
-    },
-    "lint": {
-      "dependsOn": [
-        "^lint"
-      ]
-    },
-    "check-types": {
-      "dependsOn": [
-        "^check-types"
-      ]
-    },
-    "dev": {
-      "cache": false,
-      "persistent": true
-    },
-    "db:push": {
-      "cache": false
-    },
-    "db:generate": {
-      "cache": false
-    },
-    "db:migrate": {
-      "cache": false,
-      "persistent": true
-    },
-    "db:studio": {
-      "cache": false,
-      "persistent": true
-    }
-  },
-  "globalEnv": [
-    "GITHUB_TOKEN"
-  ],
-  "globalDependencies": [
-    "tsconfig.json"
-  ]
+	"$schema": "https://turbo.build/schema.json",
+	"ui": "tui",
+	"tasks": {
+		"build": {
+			"dependsOn": ["^build"],
+			"env": ["DATABASE_URL"],
+			"passThroughEnv": ["BYTESHIP_API_KEY"],
+			"inputs": ["$TURBO_DEFAULT$", ".env", ".env.production", ".env.local"],
+			"outputs": ["dist/**", ".next/**"]
+		},
+		"web#build": {
+			"dependsOn": ["^build"],
+			"env": ["DATABASE_URL"],
+			"outputs": [".next/**", "!.next/cache/**"]
+		},
+		"lint": {
+			"dependsOn": ["^lint"]
+		},
+		"check-types": {
+			"dependsOn": ["^check-types"]
+		},
+		"dev": {
+			"cache": false,
+			"persistent": true
+		},
+		"db:push": {
+			"cache": false
+		},
+		"db:generate": {
+			"cache": false
+		},
+		"db:migrate": {
+			"cache": false,
+			"persistent": true
+		},
+		"db:studio": {
+			"cache": false,
+			"persistent": true
+		}
+	},
+	"globalEnv": ["GITHUB_TOKEN"],
+	"globalDependencies": ["tsconfig.json"]
 }

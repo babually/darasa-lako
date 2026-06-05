@@ -1,46 +1,46 @@
 {
-  "name": "@darasa-lako/db",
-  "type": "module",
-  "exports": {
-    ".": {
-      "default": "./src/index.ts"
-    },
-    "./client": {
-      "default": "./prisma/generated/client.ts"
-    },
-    "./idb/client": {
-      "default": "./prisma/generated/idb/client/index.ts"
-    },
-    "./idb/*": {
-      "default": "./prisma/generated/idb/*.ts"
-    },
-    "./*": {
-      "default": "./src/*.ts"
-    }
-  },
-  "scripts": {
-    "db:push": "prisma db push",
-    "db:generate": "prisma generate",
-    "db:migrate": "prisma migrate dev",
-    "postinstall": "prisma generate",
-    "db:idb": "pnpm exec prisma generate",
-    "db:studio": "prisma studio"
-  },
-  "dependencies": {
-    "@darasa-lako/env": "workspace:*",
-    "@neondatabase/serverless": "^1.0.2",
-    "@paralleldrive/cuid2": "^3.3.0",
-    "@prisma/adapter-neon": "^7.7.0",
-    "@prisma/client": "catalog:",
-    "dotenv": "catalog:",
-    "idb": "^8.0.3",
-    "uuid": "^14.0.0",
-    "zod": "catalog:"
-  },
-  "devDependencies": {
-    "@darasa-lako/config": "workspace:*",
-    "@prisma-idb/idb-client-generator": "^0.38.0",
-    "prisma": "^7.7.0",
-    "typescript": "^6"
-  }
+	"name": "@darasa-lako/db",
+	"type": "module",
+	"exports": {
+		".": {
+			"default": "./src/index.ts"
+		},
+		"./client": {
+			"default": "./prisma/generated/client.ts"
+		},
+		"./idb/client": {
+			"default": "./prisma/generated/idb/client/index.ts"
+		},
+		"./idb/*": {
+			"default": "./prisma/generated/idb/*.ts"
+		},
+		"./*": {
+			"default": "./src/*.ts"
+		}
+	},
+	"scripts": {
+		"db:push": "prisma db push",
+		"db:generate": "prisma generate",
+		"db:migrate": "prisma migrate dev",
+		"postinstall": "prisma generate",
+		"db:idb": "pnpm exec prisma generate",
+		"db:studio": "prisma studio"
+	},
+	"dependencies": {
+		"@darasa-lako/env": "workspace:*",
+		"@neondatabase/serverless": "^1.0.2",
+		"@paralleldrive/cuid2": "^3.3.0",
+		"@prisma/adapter-neon": "^7.7.0",
+		"@prisma/client": "catalog:",
+		"dotenv": "catalog:",
+		"idb": "^8.0.3",
+		"uuid": "^14.0.0",
+		"zod": "catalog:"
+	},
+	"devDependencies": {
+		"@darasa-lako/config": "workspace:*",
+		"@prisma-idb/idb-client-generator": "^0.38.0",
+		"prisma": "^7.7.0",
+		"typescript": "^6"
+	}
 }

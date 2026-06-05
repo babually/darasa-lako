@@ -3,28 +3,31 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { useUnistyles } from "react-native-unistyles";
 
 export const unstable_settings = {
-  initialRouteName: "(drawer)",
+	initialRouteName: "(drawer)",
 };
 
 export default function RootLayout() {
-  const { theme } = useUnistyles();
+	const { theme } = useUnistyles();
 
-  return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
-      <Stack
-        screenOptions={{
-          headerStyle: {
-            backgroundColor: theme.colors.background,
-          },
-          headerTitleStyle: {
-            color: theme.colors.foreground,
-          },
-          headerTintColor: theme.colors.foreground,
-        }}
-      >
-        <Stack.Screen name="(drawer)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ title: "Modal", presentation: "modal" }} />
-      </Stack>
-    </GestureHandlerRootView>
-  );
+	return (
+		<GestureHandlerRootView style={{ flex: 1 }}>
+			<Stack
+				screenOptions={{
+					headerStyle: {
+						backgroundColor: theme.colors.background,
+					},
+					headerTitleStyle: {
+						color: theme.colors.foreground,
+					},
+					headerTintColor: theme.colors.foreground,
+				}}
+			>
+				<Stack.Screen name="(drawer)" options={{ headerShown: false }} />
+				<Stack.Screen
+					name="modal"
+					options={{ title: "Modal", presentation: "modal" }}
+				/>
+			</Stack>
+		</GestureHandlerRootView>
+	);
 }
